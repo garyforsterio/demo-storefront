@@ -1,0 +1,48 @@
+{
+  "name": "storefront-client",
+  "description": "A simple React application demoing funcionality for a online storefront",
+  "version": "1.0.0",
+  "main": "./src/index.html",
+  "author": "Gary Forster <gary@garyforster.io>",
+  "dependencies": {
+    "@types/react-router-dom": "^5.1.5",
+    "i18next": "^19.3.4",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.1",
+    "react-i18next": "^11.3.4",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.8",
+    "@types/react": "^16.9.29",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-helmet": "^5.0.15",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-simple-import-sort": "^5.0.2",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.0.2",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
+    "start": "npm run serve",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "alias": {
+    "@/*": "./*"
+  }
+}
