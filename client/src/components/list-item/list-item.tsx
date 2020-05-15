@@ -42,7 +42,7 @@ const ListItem: React.FunctionComponent<ListItemProps> = ({
               {config.curreny}
               {price}
             </Price>
-            <IconIndicator icon={Heart} value={likes} />
+            <IconIndicator icon={Heart} title="likes" value={likes} />
           </BottomBar>
         </Info>
       </Container>
