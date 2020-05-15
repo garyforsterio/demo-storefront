@@ -1,11 +1,17 @@
 // Used by jest for test compilation
 {
   "presets": [
-    "@babel/preset-env",
+    [
+      "@babel/preset-env",
+      {
+        "loose": true
+      }
+    ],
     "@babel/preset-react",
     "@babel/preset-typescript"
   ],
   "plugins": [
+    "@babel/plugin-transform-runtime",
     [
       "module-resolver",
       {
