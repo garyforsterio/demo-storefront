@@ -7,13 +7,13 @@ enableFetchMocks();
 
 const DUMMY_URL = '/items';
 
+const DUMMY_DATA = 'test';
+
 const DUMMY_RESPONSE = {
-  data: 'test',
+  data: DUMMY_DATA,
 };
 
 const DUMMY_ERROR_MESSAGE = 'fake error message';
-
-export const DUMMY_DATA = {};
 
 describe('useApi', () => {
   beforeEach(() => {
@@ -36,7 +36,7 @@ describe('useApi', () => {
       const { result, waitForNextUpdate } = renderHook(() => useApi(DUMMY_URL));
       await waitForNextUpdate();
       expect(fetchMock).toBeCalledTimes(1);
-      expect(result.current.response).toEqual(DUMMY_RESPONSE);
+      expect(result.current.response).toEqual(DUMMY_DATA);
     });
   });
 
