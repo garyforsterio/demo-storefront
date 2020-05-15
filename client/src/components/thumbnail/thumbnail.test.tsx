@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+
+import { render, screen } from '/utils/test.utils';
 
 import Thumbnail from './';
 
@@ -9,11 +10,17 @@ const DUMMY_SRC = '/test.jpg';
 
 describe('Thumbnail', () => {
   it('it renders an image', () => {
-    render(<Thumbnail src={DUMMY_SRC} />);
+    render(<Thumbnail sold={false} src={DUMMY_SRC} />);
     expect(screen.getByAltText('thumbnail')).toBeVisible();
   });
-  it('displays a sold item', () => {
+
+  it('displays a sold item', async () => {
     render(<Thumbnail sold={true} src={DUMMY_SRC} />);
-    expect(screen.getByText('SOLD')).toBeVisible();
+    expect(screen.getByTitle('SOLD')).toBeTruthy();
+  });
+
+  it('does not display sold when still available', () => {
+    render(<Thumbnail sold={false} src={DUMMY_SRC} />);
+    expect(screen.queryByTitle('SOLD')).toBeNull();
   });
 });
