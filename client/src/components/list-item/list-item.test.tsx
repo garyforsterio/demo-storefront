@@ -1,13 +1,13 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
 
 import config from '/config';
+import { render, screen } from '/utils/test.utils';
 
 import ListItem from './';
 
 import '@testing-library/jest-dom/extend-expect';
 
-const DUMMY_SRC = '/test.jpg';
+const DUMMY_IMAGE_SRC = '/test.jpg';
 const DUMMY_NAME = 'Light pink shoes';
 const DUMMY_PRICE = 51;
 const DUMMY_LIKES = 91;
@@ -18,10 +18,10 @@ describe('List Item', () => {
     render(
       <ListItem
         id={DUMMY_ID}
+        image={DUMMY_IMAGE_SRC}
         likes={DUMMY_LIKES}
         name={DUMMY_NAME}
         price={DUMMY_PRICE}
-        src={DUMMY_SRC}
       />,
     );
     expect(screen.getByAltText('thumbnail')).toBeVisible();
@@ -31,24 +31,24 @@ describe('List Item', () => {
     render(
       <ListItem
         id={DUMMY_ID}
+        image={DUMMY_IMAGE_SRC}
         likes={DUMMY_LIKES}
         name={DUMMY_NAME}
         price={DUMMY_PRICE}
         sold={true}
-        src={DUMMY_SRC}
       />,
     );
-    expect(screen.getByText('SOLD')).toBeVisible();
+    expect(screen.getByTitle('SOLD')).toBeTruthy();
   });
 
   it('displays a price', () => {
     render(
       <ListItem
         id={DUMMY_ID}
+        image={DUMMY_IMAGE_SRC}
         likes={DUMMY_LIKES}
         name={DUMMY_NAME}
         price={DUMMY_PRICE}
-        src={DUMMY_SRC}
       />,
     );
     expect(screen.getByText(config.curreny + DUMMY_PRICE)).toBeVisible();
@@ -58,26 +58,26 @@ describe('List Item', () => {
     render(
       <ListItem
         id={DUMMY_ID}
+        image={DUMMY_IMAGE_SRC}
         likes={DUMMY_LIKES}
         name={DUMMY_NAME}
         price={DUMMY_PRICE}
-        src={DUMMY_SRC}
       />,
     );
     expect(screen.getByText(DUMMY_LIKES.toString())).toBeVisible();
   });
 
-  it('links to a single product page', () => {
-    const { container } = render(
+  it('links to a product page', () => {
+    render(
       <ListItem
         id={DUMMY_ID}
+        image={DUMMY_IMAGE_SRC}
         likes={DUMMY_LIKES}
         name={DUMMY_NAME}
         price={DUMMY_PRICE}
-        src={DUMMY_SRC}
       />,
     );
-    expect(container.closest('a')).toHaveAttribute(
+    expect(screen.getByText(DUMMY_NAME).closest('a')).toHaveAttribute(
       'href',
       '/items/' + DUMMY_ID,
     );

@@ -1,18 +1,53 @@
 import * as React from 'react';
+import { Heart } from '@styled-icons/boxicons-regular/Heart';
 
-import {} from './list-item.styles';
+import IconIndicator from '/components/icon-indicator';
+import Thumbnail from '/components/thumbnail';
+import config from '/config';
+
+import {
+  BottomBar,
+  Container,
+  Info,
+  Name,
+  Price,
+  StyledLink,
+} from './list-item.styles';
 
 type ListItemProps = {
   id: string;
   likes: number;
   name: string;
   price: number;
-  src: string;
+  image: string;
   sold?: boolean;
 };
 
-const ListItem: React.FunctionComponent<ListItemProps> = () => {
-  return null;
+const ListItem: React.FunctionComponent<ListItemProps> = ({
+  id,
+  likes,
+  name,
+  price,
+  image,
+  sold,
+}) => {
+  return (
+    <StyledLink to={'/items/' + id}>
+      <Container>
+        <Thumbnail sold={sold} src={image} />
+        <Info>
+          <Name>{name}</Name>
+          <BottomBar>
+            <Price>
+              {config.curreny}
+              {price}
+            </Price>
+            <IconIndicator icon={Heart} value={likes} />
+          </BottomBar>
+        </Info>
+      </Container>
+    </StyledLink>
+  );
 };
 
 export default ListItem;
