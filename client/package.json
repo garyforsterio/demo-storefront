@@ -5,6 +5,7 @@
   "main": "./src/index.html",
   "author": "Gary Forster <gary@garyforster.io>",
   "dependencies": {
+    "@styled-icons/boxicons-regular": "^10.0.0",
     "@types/react-router-dom": "^5.1.5",
     "i18next": "^19.3.4",
     "normalize.css": "^8.0.1",
