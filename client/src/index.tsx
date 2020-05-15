@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import App from '/components/app';
+import theme from '/theme';
 
 // i18 support
 import '/services/i18n';
@@ -22,7 +23,9 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
   <>
     <GlobalStyle />
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </>,
   document.getElementById('root'),
 );
