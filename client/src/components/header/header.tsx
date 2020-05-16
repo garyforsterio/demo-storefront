@@ -1,11 +1,40 @@
 import * as React from 'react';
 
+import Menu from '/components/menu';
+import { MenuItem } from '/index.d';
+
+import { Title } from './header.styles';
+
 type HeaderProps = {
   title: string;
 };
 
-const Header: React.FunctionComponent<HeaderProps> = () => {
-  return null;
+const menuItems: MenuItem[] = [
+  {
+    label: 'すべて',
+    path: '/',
+  },
+  {
+    label: 'レディース',
+    path: '/',
+  },
+  {
+    label: 'ベビー・キッズ',
+    path: '/',
+  },
+  {
+    label: 'エンタン',
+    path: '/',
+  },
+];
+
+const Header: React.FunctionComponent<HeaderProps> = ({ title }) => {
+  return (
+    <>
+      <Title>{title}</Title>
+      <Menu items={menuItems} />
+    </>
+  );
 };
 
 export default Header;
