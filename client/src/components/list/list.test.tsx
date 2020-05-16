@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import React from 'react';
 
+import '@testing-library/jest-dom/extend-expect';
+
 import * as hooks from '/hooks';
 import { render, screen } from '/utils/test.utils';
 
 import List from './list';
-
-import '@testing-library/jest-dom/extend-expect';
 
 const stateSpy = jest.spyOn(hooks, 'useApi');
 

@@ -34,14 +34,14 @@ module.exports = {
           [`^(${require('module').builtinModules.join('|')})(/|$)`],
           // NPM packages. `react` related packages come first.
           ['^react', '^@?\\w'],
+          // Side effect imports.
+          ['^\\u0000'],
           // Absolute imports and other imports such as Vue-style `@/foo`.
           // Anything that does not start with a dot.
           ['^[^.\\u0000]'],
           // Relative imports.
           // Anything that starts with a dot.
           ['^\\.'],
-          // Side effect imports.
-          ['^\\u0000'],
         ],
       },
     ],

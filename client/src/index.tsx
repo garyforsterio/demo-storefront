@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
-import App from '/components/app';
-import theme from '/theme';
-
 // i18 support
 import '/services/i18n';
 // Normalize css
 import 'normalize.css';
+
+import App from '/components/app';
+import theme from '/theme';
 /**
  * Fluid Typogrphy
  * Can be reconfigured to not use min, max if targeting older browsers

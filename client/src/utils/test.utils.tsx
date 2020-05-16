@@ -1,6 +1,6 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router';
-import { render } from '@testing-library/react';
+import { render, RenderOptions, RenderResult } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
 import theme from '/theme';
@@ -13,8 +13,10 @@ const AllProviders: React.FunctionComponent = ({ children }) => {
   );
 };
 
-const customRender = (ui, options?) =>
-  render(ui, { wrapper: AllProviders, ...options });
+const customRender = (
+  ui: React.ReactElement,
+  options?: RenderOptions,
+): RenderResult => render(ui, { wrapper: AllProviders, ...options });
 
 // re-export everything
 export * from '@testing-library/react';

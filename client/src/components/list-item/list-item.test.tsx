@@ -1,11 +1,11 @@
 import React from 'react';
 
+import '@testing-library/jest-dom/extend-expect';
+
 import config from '/config';
 import { render, screen } from '/utils/test.utils';
 
 import ListItem from './';
-
-import '@testing-library/jest-dom/extend-expect';
 
 const DUMMY_IMAGE_SRC = '/test.jpg';
 const DUMMY_NAME = 'Light pink shoes';

@@ -1,10 +1,10 @@
 import React from 'react';
 
+import '@testing-library/jest-dom/extend-expect';
+
 import { render, screen } from '/utils/test.utils';
 
 import Thumbnail from './';
-
-import '@testing-library/jest-dom/extend-expect';
 
 const DUMMY_SRC = '/test.jpg';
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Heart } from '@styled-icons/boxicons-regular/Heart';
 
+import '@testing-library/jest-dom/extend-expect';
+
 import { render, screen } from '/utils/test.utils';
 
 import IconIndicator from './';
-
-import '@testing-library/jest-dom/extend-expect';
 
 const DUMMY_ICON = Heart;
 const DUMMY_VALUE = 18;
