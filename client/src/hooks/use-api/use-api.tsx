@@ -16,8 +16,8 @@ function useFetch<T>(url: string, options?: RequestInit): UseFetchReturn<T> {
     const fetchData = async (): Promise<void> => {
       try {
         const res = await fetch(config.apiUrl + url, options);
-        const json: { data: T } = await res.json();
-        setResponse(json.data);
+        const json: { data: T } | T = await res.json();
+        setResponse('data' in json ? json.data : json);
       } catch (error) {
         setError(error);
       }
