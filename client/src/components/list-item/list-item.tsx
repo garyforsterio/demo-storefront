@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Heart } from '@styled-icons/boxicons-regular/Heart';
 
 import IconIndicator from '/components/icon-indicator';
@@ -39,7 +39,7 @@ const ListItem: React.FunctionComponent<ListItemProps> = ({
           <Name>{name}</Name>
           <BottomBar>
             <Price>
-              {config.curreny}
+              {config.currency}
               {price}
             </Price>
             <IconIndicator icon={Heart} title="likes" value={likes} />

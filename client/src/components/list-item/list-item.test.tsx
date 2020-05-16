@@ -24,7 +24,10 @@ describe('List Item', () => {
         price={DUMMY_PRICE}
       />,
     );
-    expect(screen.getByAltText('thumbnail')).toBeVisible();
+    expect(screen.getByAltText('thumbnail')).toHaveAttribute(
+      'src',
+      DUMMY_IMAGE_SRC,
+    );
   });
 
   it('displays a sold item', () => {
@@ -51,7 +54,7 @@ describe('List Item', () => {
         price={DUMMY_PRICE}
       />,
     );
-    expect(screen.getByText(config.curreny + DUMMY_PRICE)).toBeVisible();
+    expect(screen.getByText(config.currency + DUMMY_PRICE)).toBeVisible();
   });
 
   it('displays the number of likes', () => {

@@ -5,10 +5,10 @@ import List from '/components/list';
 
 const Item: React.FunctionComponent = () => {
   return (
-    <div>
+    <>
       <Header title={'メルカリ'} />
       <List />
-    </div>
+    </>
   );
 };
 

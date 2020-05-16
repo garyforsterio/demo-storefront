@@ -11,7 +11,7 @@ const DUMMY_SRC = '/test.jpg';
 describe('Thumbnail', () => {
   it('it renders an image', () => {
     render(<Thumbnail sold={false} src={DUMMY_SRC} />);
-    expect(screen.getByAltText('thumbnail')).toBeVisible();
+    expect(screen.getByAltText('thumbnail')).toHaveAttribute('src', DUMMY_SRC);
   });
 
   it('displays a sold item', async () => {

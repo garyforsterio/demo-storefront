@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { StyledIcon } from '@styled-icons/styled-icon';
 
 import { Container, IconContainer, Value } from './icon-indicator.styles';
