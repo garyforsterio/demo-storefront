@@ -1,4 +1,4 @@
-export interface Item {
+export interface Product {
   id: string;
   name: string;
   description: string;
@@ -9,4 +9,9 @@ export interface Item {
   shipping_fee: string;
   image: string;
   category_id: number;
+}
+
+export interface MenuItem {
+  label: string;
+  link: string;
 }
