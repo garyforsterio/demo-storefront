@@ -16,16 +16,17 @@ import theme from '/theme';
  */
 const GlobalStyle = createGlobalStyle`
   html {
+    box-sizing: border-box;
+    font-family: sans-serif;
     font-size: min(max(16px, 4vw), 22px);
+    background: ${(props): string => props.theme.colors.backgroundSecondary}
   }
 `;
 
 ReactDOM.render(
-  <>
+  <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
-  </>,
+    <App />
+  </ThemeProvider>,
   document.getElementById('root'),
 );
