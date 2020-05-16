@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Menu from '/components/menu';
+import SEO from '/components/seo';
 import { MenuItem } from '/index.d';
 
 import { Title } from './header.styles';
@@ -31,6 +32,7 @@ const menuItems: MenuItem[] = [
 const Header: React.FunctionComponent<HeaderProps> = ({ title }) => {
   return (
     <>
+      <SEO title={title} />
       <Title>{title}</Title>
       <Menu items={menuItems} />
     </>

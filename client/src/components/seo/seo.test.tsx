@@ -11,7 +11,7 @@ const TITLE = 'Test page';
 
 describe('SEO', () => {
   it('sets a page title', () => {
-    render(<SEO title={title} />);
+    render(<SEO title={TITLE} />);
     const helmet = Helmet.peek();
     expect(helmet.title).toBe(TITLE);
   });
