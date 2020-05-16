@@ -12,8 +12,8 @@ import Menu from './';
 const ACTIVE_CLASS_NAME = 'active';
 
 const ITEMS: MenuItem[] = [
-  { label: 'First', link: '/first' },
-  { label: 'Second', link: '/second' },
+  { label: 'First', path: '/' },
+  { label: 'Second', path: '/second' },
 ];
 
 describe('Menu', () => {
@@ -28,12 +28,12 @@ describe('Menu', () => {
     ITEMS.forEach((item) => {
       expect(screen.getByText(item.label).closest('a')).toHaveAttribute(
         'href',
-        item.link,
+        item.path,
       );
     });
   });
   it('the active item is set', () => {
-    render(<Menu activePath={ITEMS[0].link} items={ITEMS} />);
+    render(<Menu items={ITEMS} />);
     expect(screen.getByText(ITEMS[0].label).closest('a')).toHaveClass(
       ACTIVE_CLASS_NAME,
     );

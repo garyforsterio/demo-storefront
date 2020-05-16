@@ -2,13 +2,22 @@ import * as React from 'react';
 
 import { MenuItem } from '/index.d';
 
+import { Container, StyledNavLink } from './menu.styles';
+
 type MenuProps = {
-  activePath?: string;
   items: MenuItem[];
 };
 
-const Menu: React.FunctionComponent<MenuProps> = () => {
-  return null;
+const Menu: React.FunctionComponent<MenuProps> = ({ items }) => {
+  return (
+    <Container>
+      {items.map(({ label, path }) => (
+        <StyledNavLink key={label} to={path}>
+          {label}
+        </StyledNavLink>
+      ))}
+    </Container>
+  );
 };
 
 export default Menu;

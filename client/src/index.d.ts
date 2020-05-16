@@ -13,5 +13,5 @@ export interface Product {
 
 export interface MenuItem {
   label: string;
-  link: string;
+  path: string;
 }

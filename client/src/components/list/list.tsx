@@ -3,14 +3,14 @@ import * as React from 'react';
 
 import ListItem from '/components/list-item';
 import { useApi } from '/hooks';
-import { Item } from '/index.d';
+import { Product } from '/index.d';
 
 import { Container } from './list.styles';
 
 const ITEM_PATHNAME = '/items';
 
 const List: React.FunctionComponent = () => {
-  const { response, error, loading } = useApi<Item[]>(ITEM_PATHNAME);
+  const { response, error, loading } = useApi<Product[]>(ITEM_PATHNAME);
   if (loading) {
     return <p>Loading...</p>;
   }
