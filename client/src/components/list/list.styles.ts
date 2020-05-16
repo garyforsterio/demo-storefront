@@ -5,5 +5,5 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
   grid-gap: 0.5rem;
-  padding: 0.5em;
+  padding: 0.5rem;
 `;

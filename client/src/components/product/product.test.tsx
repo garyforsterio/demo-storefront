@@ -9,7 +9,7 @@ import Product from './';
 const IMAGE_SRC = '/test.jpg';
 const NAME = 'Light pink shoes';
 const DESCRIPTION =
-  'Pre-owned, in good condition with signs of wear, may just need to be cleaned or washed.  Please see photos for style & condition.';
+  'Pre-owned, in good condition with signs of wear, may just need to be cleaned or washed. Please see photos for style & condition.';
 const LIKES = 76;
 const COMMENTS = 22;
 
