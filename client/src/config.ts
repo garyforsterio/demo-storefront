@@ -1,6 +1,6 @@
 const config = {
   apiUrl: process.env.API_URL || 'http://localhost/api',
-  curreny: '$',
+  currency: '$',
 };
 
 export default config;
