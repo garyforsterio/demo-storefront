@@ -7,7 +7,7 @@ import IconIndicator from '/components/icon-indicator';
 import { Product as IProduct } from '/index.d';
 
 import {
-  Container,
+  Card,
   Description,
   IndicatorBar,
   Info,
@@ -40,7 +40,7 @@ const Product: React.FunctionComponent<ProductProps> = ({
   } = data;
   return (
     <ProductWrapper>
-      <Container>
+      <Card>
         <Thumbnail alt="thumbnail" src={image} />
         <Info>
           <Name>{name}</Name>
@@ -60,7 +60,7 @@ const Product: React.FunctionComponent<ProductProps> = ({
           </IndicatorBar>
           <Description>{description}</Description>
         </Info>
-      </Container>
+      </Card>
       <AddToCart
         onAdd={onAddToCart}
         price={price}

@@ -5,7 +5,7 @@ export const ProductWrapper = styled.div`
   background: ${(props): string => props.theme.colors.backgroundSecondary};
 `;
 
-export const Container = styled.div`
+export const Card = styled.div`
   box-shadow: 0px 0px 0.5px;
   background: ${(props): string => props.theme.colors.backgroundPrimary};
   display: flex;

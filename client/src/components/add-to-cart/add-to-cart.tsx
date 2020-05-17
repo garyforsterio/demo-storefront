@@ -49,7 +49,7 @@ const AddToCart: React.FunctionComponent<AddToCartProps> = ({
           </Price>
           <Postage>{shipping}</Postage>
         </LeftBlock>
-        <Button onClick={handleClick} disabled={soldOut} type="button">
+        <Button disabled={soldOut} onClick={handleClick} type="button">
           {soldOut ? t('addToCart.soldOut') : t('addToCart.prompt')}
         </Button>
       </Container>

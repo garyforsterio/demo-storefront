@@ -36,6 +36,7 @@ export const Postage = styled.div`
 `;
 
 export const Button = styled.button`
+  cursor: pointer;
   background: ${(props): string => props.theme.colors.primary};
   color: white;
   padding: 0.6rem;
