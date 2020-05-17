@@ -1,6 +1,7 @@
 {
   "addToCart": {
-    "buttonLabel": "ADD TO CART"
+    "soldOut": "SOLD OUT",
+    "prompt": "ADD TO CART"
   },
   "global": {
     "siteName": "メルカリ"

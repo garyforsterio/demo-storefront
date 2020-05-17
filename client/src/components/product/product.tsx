@@ -36,6 +36,7 @@ const Product: React.FunctionComponent<ProductProps> = ({
     comment_count,
     price,
     shipping_fee,
+    is_sold_out,
   } = data;
   return (
     <ProductWrapper>
@@ -60,7 +61,12 @@ const Product: React.FunctionComponent<ProductProps> = ({
           <Description>{description}</Description>
         </Info>
       </Container>
-      <AddToCart onAdd={onAddToCart} price={price} shipping={shipping_fee} />
+      <AddToCart
+        onAdd={onAddToCart}
+        price={price}
+        shipping={shipping_fee}
+        soldOut={is_sold_out}
+      />
     </ProductWrapper>
   );
 };

@@ -41,4 +41,8 @@ export const Button = styled.button`
   padding: 0.6rem;
   border: none;
   outline: none;
+  &:disabled {
+    background: initial;
+    color: ${(props): string => props.theme.colors.primary};
+  }
 `;

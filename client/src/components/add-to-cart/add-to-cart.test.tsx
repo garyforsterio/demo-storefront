@@ -12,21 +12,75 @@ const SHIPPING = 'Included';
 
 describe('Add To Cart', () => {
   const handleAdd = jest.fn();
-  it('it renders a price with currency', () => {
-    render(<AddToCart onAdd={handleAdd} price={PRICE} shipping={SHIPPING} />);
+  afterEach(() => {
+    handleAdd.mockReset();
+  });
+  it('should render a price with currency', () => {
+    render(
+      <AddToCart
+        onAdd={handleAdd}
+        price={PRICE}
+        shipping={SHIPPING}
+        soldOut={false}
+      />,
+    );
     expect(screen.getByText(config.currency + PRICE.toString())).toBeTruthy();
   });
-  it('it renders shipping information', () => {
-    render(<AddToCart onAdd={handleAdd} price={PRICE} shipping={SHIPPING} />);
+  it('should render shipping information', () => {
+    render(
+      <AddToCart
+        onAdd={handleAdd}
+        price={PRICE}
+        shipping={SHIPPING}
+        soldOut={false}
+      />,
+    );
     expect(screen.getByText(SHIPPING)).toBeTruthy();
   });
-  it('it renders a button', () => {
-    render(<AddToCart onAdd={handleAdd} price={PRICE} shipping={SHIPPING} />);
+  it('should render a button', () => {
+    render(
+      <AddToCart
+        onAdd={handleAdd}
+        price={PRICE}
+        shipping={SHIPPING}
+        soldOut={false}
+      />,
+    );
     expect(screen.getByRole('button')).toHaveTextContent('ADD TO CART');
   });
-  it('it trigger callback function on click', () => {
-    render(<AddToCart onAdd={handleAdd} price={PRICE} shipping={SHIPPING} />);
+  it('should trigger callback function on click', () => {
+    render(
+      <AddToCart
+        onAdd={handleAdd}
+        price={PRICE}
+        shipping={SHIPPING}
+        soldOut={false}
+      />,
+    );
     fireEvent.click(screen.getByRole('button'));
     expect(handleAdd).toHaveBeenCalledTimes(1);
+  });
+  it('should render a disabled button when sold out', () => {
+    render(
+      <AddToCart
+        onAdd={handleAdd}
+        price={PRICE}
+        shipping={SHIPPING}
+        soldOut={true}
+      />,
+    );
+    expect(screen.getByRole('button')).toHaveAttribute('disabled');
+  });
+  it('should not register add to cart event when sold out', () => {
+    render(
+      <AddToCart
+        onAdd={handleAdd}
+        price={PRICE}
+        shipping={SHIPPING}
+        soldOut={true}
+      />,
+    );
+    fireEvent.click(screen.getByRole('button'));
+    expect(handleAdd).toHaveBeenCalledTimes(0);
   });
 });
