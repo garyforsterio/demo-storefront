@@ -12,7 +12,7 @@ const Menu: React.FunctionComponent<MenuProps> = ({ items }) => {
   return (
     <Container>
       {items.map(({ label, path }) => (
-        <StyledNavLink key={label} to={path}>
+        <StyledNavLink exact key={label} to={path}>
           {label}
         </StyledNavLink>
       ))}
