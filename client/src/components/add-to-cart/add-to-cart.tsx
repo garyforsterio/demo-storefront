@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import config from '/config';
 
@@ -22,6 +23,7 @@ const AddToCart: React.FunctionComponent<AddToCartProps> = ({
   onAdd,
   shipping,
 }) => {
+  const { t } = useTranslation();
   return (
     <>
       <Filler />
@@ -34,7 +36,7 @@ const AddToCart: React.FunctionComponent<AddToCartProps> = ({
           <Postage>{shipping}</Postage>
         </LeftBlock>
         <Button onClick={onAdd} type="button">
-          ADD TO CART
+          {t('addToCart.buttonLabel')}
         </Button>
       </Container>
     </>

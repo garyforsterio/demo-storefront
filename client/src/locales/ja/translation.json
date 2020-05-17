@@ -1,0 +1,11 @@
+{
+  "addToCart": {
+    "buttonLabel": "ADD TO CART"
+  },
+  "global": {
+    "siteName": "メルカリ"
+  },
+  "menu": {
+    "home": "すべて"
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Menu from '/components/menu';
 import SEO from '/components/seo';
@@ -11,15 +12,13 @@ type HeaderProps = {
   title?: string;
 };
 
-const DEFAULT_TITLE = 'メルカリ';
-
-const Header: React.FunctionComponent<HeaderProps> = ({
-  title = DEFAULT_TITLE,
-}) => {
+const Header: React.FunctionComponent<HeaderProps> = ({ title: titleProp }) => {
   const { categories } = useCategories();
+  const { t } = useTranslation();
+  const title = titleProp || (t('global.siteName') as string);
   const items: MenuItem[] = [
     {
-      label: 'すべて',
+      label: t('menu.home'),
       path: '/',
     },
     ...(categories || []).map(({ name, id }) => ({

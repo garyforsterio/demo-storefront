@@ -3,6 +3,8 @@ import { MemoryRouter } from 'react-router';
 import { render, RenderOptions, RenderResult } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
+import '/services/i18n';
+
 import theme from '/theme';
 
 const AllProviders: React.FunctionComponent = ({ children }) => {

@@ -4,7 +4,7 @@ import i18n from 'i18next';
 // TODO: Enable when multiple languages required
 // import detector from "i18next-browser-languagedetector";
 // import backend from "i18next-xhr-backend";
-import en from '../locales/en/translation.json';
+import ja from '../locales/ja/translation.json';
 
 i18n
   // TODO: Enable when multiple languages required
@@ -13,12 +13,12 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: {
-        translation: en,
+      ja: {
+        translation: ja,
       },
     },
-    lng: 'en',
-    keySeparator: false,
+    lng: 'ja',
+    fallbackLng: 'ja',
     interpolation: {
       escapeValue: false,
     },
