@@ -21,7 +21,7 @@ const IconIndicator: React.FunctionComponent<IconIndicatorProps> = ({
       <IconContainer background={iconBackground ? 'true' : ''}>
         <Icon title={title} />
       </IconContainer>
-      <Value>{value}</Value>
+      <Value>{value || 0}</Value>
     </Container>
   );
 };

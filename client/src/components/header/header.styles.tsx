@@ -9,4 +9,7 @@ export const Title = styled.h1`
   margin: 0;
   z-index: 2;
   color: ${(props): string => props.theme.colors.textPrimary};
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;

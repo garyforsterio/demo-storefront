@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-family: sans-serif;
-    font-size: min(max(16px, 4vw), 22px);
+    font-size: min(max(16px, 4vw), 20px);
     background: ${(props): string => props.theme.colors.backgroundSecondary}
   }
 `;

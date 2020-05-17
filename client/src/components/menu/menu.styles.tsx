@@ -13,4 +13,7 @@ export const StyledNavLink = styled(NavLink)`
   margin: 0 2vw 0 0.5rem;
   text-decoration: none;
   color: ${(props): string => props.theme.colors.textSecondary};
+  &.active {
+    font-weight: bold;
+  }
 `;

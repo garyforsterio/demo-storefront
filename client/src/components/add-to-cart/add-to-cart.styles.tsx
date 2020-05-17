@@ -5,6 +5,7 @@ export const Filler = styled.div`
 `;
 
 export const Container = styled(Filler)`
+  box-shadow: 0 -1px 1px #efefef;
   position: fixed;
   bottom: 0;
   left: 0;
