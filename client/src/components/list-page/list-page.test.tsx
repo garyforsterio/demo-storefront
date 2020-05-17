@@ -6,7 +6,7 @@ import '@testing-library/jest-dom/extend-expect';
 import * as hooks from '/hooks';
 import { render, screen } from '/utils/test.utils';
 
-import List from './list';
+import ListPage from './list-page';
 
 const stateSpy = jest.spyOn(hooks, 'useApi');
 
@@ -39,18 +39,18 @@ const DUMMY_DATA = [
   },
 ];
 
-describe('List', () => {
+describe('List Page', () => {
   afterEach(() => {
     stateSpy.mockReset();
   });
-  it('it renders a loading screen', async () => {
+  it('it renders a loading icon', async () => {
     stateSpy.mockReturnValue({
       loading: true,
       response: undefined,
       error: undefined,
     });
-    render(<List />);
-    expect(screen.getByText('Loading...')).toBeVisible();
+    render(<ListPage />);
+    expect(screen.getByTitle('loading')).toBeTruthy();
   });
   it('displays items', async () => {
     stateSpy.mockReturnValue({
@@ -58,7 +58,7 @@ describe('List', () => {
       response: DUMMY_DATA,
       error: undefined,
     });
-    render(<List />);
+    render(<ListPage />);
     await screen.findByText('Light pink shoes');
     expect(stateSpy).toHaveBeenCalledTimes(1);
     expect(screen.getAllByAltText('thumbnail')).toHaveLength(2);
