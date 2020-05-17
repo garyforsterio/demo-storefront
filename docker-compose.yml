@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  server:
+    build: ./api-server/
+    restart: always
+    expose:
+      - 5000
+    networks:
+      - app-network
+  app:
+    build: ./client/
+    restart: always
+    networks:
+      - app-network
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+networks:
+  app-network:
