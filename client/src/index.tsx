@@ -8,6 +8,7 @@ import '/services/i18n';
 import 'normalize.css';
 
 import App from '/components/app';
+import CategoriesProvider from '/providers/categories-provider';
 import theme from '/theme';
 /**
  * Fluid Typogrphy
@@ -24,9 +25,11 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <App />
-  </ThemeProvider>,
+  <CategoriesProvider>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <App />
+    </ThemeProvider>
+  </CategoriesProvider>,
   document.getElementById('root'),
 );

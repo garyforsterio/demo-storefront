@@ -2,19 +2,19 @@ import React from 'react';
 
 import '@testing-library/jest-dom/extend-expect';
 
-import * as hooks from '/hooks';
 import { render, screen } from '/utils/test.utils';
 
+import * as hooks from './hooks';
 import ListPage from './list-page';
 
-const stateSpy = jest.spyOn(hooks, 'useApi');
+const stateSpy = jest.spyOn(hooks, 'useListPage');
 
 const DUMMY_DATA = [
   {
     id: '1',
     name: 'Light pink shoes',
     description:
-      'Pre-owned, in good condition with signs of wear, may just need to be cleaned or washed.  Please see photos for style & condition.',
+      'Pre-owned, in good condition with signs of wear, may just need to be cleaned or washed. Please see photos for style & condition.',
     like_count: 91,
     comment_count: 59,
     price: 51,
@@ -45,7 +45,7 @@ describe('List Page', () => {
   it('it renders a loading icon', async () => {
     stateSpy.mockReturnValue({
       loading: true,
-      response: undefined,
+      items: undefined,
       error: undefined,
     });
     render(<ListPage />);
@@ -54,7 +54,7 @@ describe('List Page', () => {
   it('displays items', async () => {
     stateSpy.mockReturnValue({
       loading: false,
-      response: DUMMY_DATA,
+      items: DUMMY_DATA,
       error: undefined,
     });
     render(<ListPage />);
