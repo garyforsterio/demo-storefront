@@ -8,6 +8,9 @@ type MenuProps = {
   items: MenuItem[];
 };
 
+/**
+ * Used to render a sequence of links in a horizontal bar
+ */
 const Menu: React.FunctionComponent<MenuProps> = ({ items }) => {
   return (
     <Container>

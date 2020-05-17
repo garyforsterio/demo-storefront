@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import config from '/config';
 
@@ -8,11 +8,15 @@ type UseFetchReturn<T> = {
   loading: boolean;
 };
 
-function useFetch<T>(url: string, options?: RequestInit): UseFetchReturn<T> {
+/**
+ * Used to access API
+ * Prefixes default API pathname and performs HTTP request
+ */
+function useApi<T>(url: string, options?: RequestInit): UseFetchReturn<T> {
   const [response, setResponse] = useState<T>();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchData = async (): Promise<void> => {
       try {
         const res = await fetch(config.apiUrl + url, options);
@@ -28,4 +32,4 @@ function useFetch<T>(url: string, options?: RequestInit): UseFetchReturn<T> {
   return { response, error, loading };
 }
 
-export default useFetch;
+export default useApi;

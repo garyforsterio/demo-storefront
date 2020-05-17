@@ -9,6 +9,9 @@ import Loading from '/components/loading';
 import { useListPage } from './hooks';
 import { Container } from './list-page.styles';
 
+/**
+ * Page displaying a listing of products which can be filtered using route params
+ */
 const ListPage: React.FunctionComponent = () => {
   const { loading, error, items } = useListPage();
   const { t } = useTranslation();

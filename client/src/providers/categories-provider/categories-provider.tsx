@@ -13,6 +13,10 @@ export const CategoryContext = createContext({} as CategoriesContextType);
 export const useCategories = (): CategoriesContextType =>
   useContext(CategoryContext);
 
+/**
+ * Provides categories to be used across application
+ * It is assumed these do not change frequently so can be cached over the duration of a session
+ */
 const CategoriesContextProvider: React.FunctionComponent = ({ children }) => {
   const { response, error } = useApi<Category[]>(CATEGORIES_API_PATH);
   if (error) {

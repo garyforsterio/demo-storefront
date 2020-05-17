@@ -10,6 +10,9 @@ import { Product as IProduct } from '/index.d';
 
 const ITEMS_PATHNAME = '/items/';
 
+/**
+ * Page for viewing information about specific product
+ */
 const ProductPage: React.FunctionComponent = () => {
   const { id } = useParams();
   const { response, error, loading } = useApi<IProduct>(ITEMS_PATHNAME + id);

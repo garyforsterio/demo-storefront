@@ -1,3 +1,6 @@
+/**
+ * Product interface
+ */
 export interface Product {
   id: string;
   name: string;
@@ -11,11 +14,17 @@ export interface Product {
   category_id: number;
 }
 
+/**
+ * Menu item interface for rendering links
+ */
 export interface MenuItem {
   label: string;
   path: string;
 }
 
+/**
+ * Product category interface
+ */
 export interface Category {
   id: string;
   name: string;

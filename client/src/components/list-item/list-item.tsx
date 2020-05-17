@@ -23,6 +23,9 @@ type ListItemProps = {
   sold?: boolean;
 };
 
+/**
+ * Used to give a brief overview of product and link to product page
+ */
 const ListItem: React.FunctionComponent<ListItemProps> = ({
   id,
   likes,

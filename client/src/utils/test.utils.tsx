@@ -1,3 +1,8 @@
+/**
+ * Test utilities for components
+ * Extends @testing-library/react to add context providers required for testing
+ */
+
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 import { render, RenderOptions, RenderResult } from '@testing-library/react';

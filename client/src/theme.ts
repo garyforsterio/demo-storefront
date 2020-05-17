@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 /**
- * Theme used by styled components
+ * Default theme used by styled components
  */
 const theme: DefaultTheme = {
   colors: {

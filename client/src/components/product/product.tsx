@@ -21,6 +21,9 @@ type ProductProps = {
   onAddToCart: (event: React.MouseEvent) => void;
 };
 
+/**
+ * Used to display information about a specific product
+ */
 const Product: React.FunctionComponent<ProductProps> = ({
   data,
   onAddToCart,

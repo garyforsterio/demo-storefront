@@ -1,6 +1,6 @@
 {
   "name": "storefront-client",
-  "description": "A simple React application demoing funcionality for a online storefront",
+  "description": "A simple React application demoing functionality for an online storefront",
   "version": "1.0.0",
   "main": "./src/index.html",
   "author": "Gary Forster <gary@garyforster.io>",
@@ -56,8 +56,5 @@
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
     "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
     "test": "jest"
-  },
-  "alias": {
-    "@/*": "./*"
   }
 }

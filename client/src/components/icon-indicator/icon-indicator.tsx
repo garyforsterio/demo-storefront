@@ -10,6 +10,9 @@ type IconIndicatorProps = {
   title: string;
 };
 
+/**
+ * Used to indicate a icon value pairing. For example number of comments
+ */
 const IconIndicator: React.FunctionComponent<IconIndicatorProps> = ({
   icon: Icon,
   value,

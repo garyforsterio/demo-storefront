@@ -6,6 +6,9 @@ type ErrorProps = {
   message: string;
 };
 
+/**
+ * Used to display there has been an error of somekind.
+ */
 const Error: React.FunctionComponent<ErrorProps> = ({ message }) => {
   return (
     <Container>

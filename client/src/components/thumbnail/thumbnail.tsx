@@ -7,6 +7,9 @@ type ThumbnailProps = {
   sold?: boolean;
 };
 
+/**
+ * Product thumbnail with ability to display sold indicator
+ */
 const Thumbail: React.FunctionComponent<ThumbnailProps> = ({ src, sold }) => {
   return (
     <Container>

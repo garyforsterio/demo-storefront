@@ -18,6 +18,9 @@ type AddToCartProps = {
   onAdd: (event: React.MouseEvent) => void;
 };
 
+/**
+ * Displays ribbon on bottom of screen with price and button to add to cart
+ */
 const AddToCart: React.FunctionComponent<AddToCartProps> = ({
   price,
   onAdd,

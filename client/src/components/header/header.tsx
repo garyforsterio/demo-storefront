@@ -12,6 +12,9 @@ type HeaderProps = {
   title?: string;
 };
 
+/**
+ * Header component responsible for rendering title, menu and also adding SEO info to page
+ */
 const Header: React.FunctionComponent<HeaderProps> = ({ title: titleProp }) => {
   const { categories } = useCategories();
   const { t } = useTranslation();

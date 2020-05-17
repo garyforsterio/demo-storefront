@@ -1,5 +1,8 @@
 import 'styled-components';
 
+/**
+ * Extend styled-components typings to type check theme
+ */
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {

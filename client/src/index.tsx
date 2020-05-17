@@ -9,17 +9,22 @@ import 'normalize.css';
 
 import App from '/components/app';
 import CategoriesProvider from '/providers/categories-provider';
-import theme from '/theme';
 /**
- * Fluid Typogrphy
+ * Default theme
+ * Can be easily overwritten for custom theming
+ */
+import theme from '/theme';
+
+/**
+ * Uses Fluid Typogrphy
  * Can be reconfigured to not use min, max if targeting older browsers
  * https://css-tricks.com/simplified-fluid-typography/
  */
 const GlobalStyle = createGlobalStyle`
   html {
+    font-size: min(max(16px, 4vw), 20px);
     box-sizing: border-box;
     font-family: sans-serif;
-    font-size: min(max(16px, 4vw), 20px);
     background: ${(props): string => props.theme.colors.backgroundSecondary}
   }
 `;
