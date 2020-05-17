@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Error from '/components/error';
 import Header from '/components/header';
@@ -10,27 +11,33 @@ import { Container } from './list-page.styles';
 
 const ListPage: React.FunctionComponent = () => {
   const { loading, error, items } = useListPage();
+  const { t } = useTranslation();
   return (
     <>
       <Header />
       {loading && <Loading />}
       {error && <Error message={error.message} />}
       {items && (
-        <Container>
-          {items.map(({ id, name, like_count, price, is_sold_out, image }) => {
-            return (
-              <ListItem
-                id={id}
-                image={image}
-                key={id}
-                likes={like_count}
-                name={name}
-                price={price}
-                sold={is_sold_out}
-              />
-            );
-          })}
-        </Container>
+        <>
+          {!items.length && <Error message={t('listPage.emptyList')} />}
+          <Container>
+            {items.map(
+              ({ id, name, like_count, price, is_sold_out, image }) => {
+                return (
+                  <ListItem
+                    id={id}
+                    image={image}
+                    key={id}
+                    likes={like_count}
+                    name={name}
+                    price={price}
+                    sold={is_sold_out}
+                  />
+                );
+              },
+            )}
+          </Container>
+        </>
       )}
     </>
   );

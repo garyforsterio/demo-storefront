@@ -7,6 +7,7 @@ export const Container = styled.div`
 `;
 
 export const Message = styled.div`
+  margin-top: 1em;
   color: ${(props): string => props.theme.colors.textSecondary};
 `;
 
