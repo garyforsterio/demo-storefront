@@ -10,7 +10,7 @@ Please see the repository main read me file for overview.
 
 ### Development
 
-All source code is written in Typescript.
+All source code is written in Typescript. Test-driven development (TDD) is used, first specifying unit tests for a component before building it.
 
 To install third-party dependencies run:
 
@@ -42,7 +42,7 @@ npm test
 
 Static HTML5 files are generated which are hosted using an NGINX docker instance
 
-See deployment information in root of repository for futher information
+See deployment information in root of repository for further information
 
 To build the project run:
 
