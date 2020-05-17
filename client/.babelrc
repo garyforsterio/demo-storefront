@@ -4,6 +4,7 @@
     [
       "@babel/preset-env",
       {
+        // Required for mocking methods
         "loose": true
       }
     ],
