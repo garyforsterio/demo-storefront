@@ -1,4 +1,6 @@
-# API Document
+# API Server
+
+Uses Sinatra in Ruby.
 
 ## Launch API Server
 

@@ -11,7 +11,7 @@ end
 
 def applyRuntimeConfigurationToItem(item)
   modified = item.clone
-  modified['image'] = "http://localhost:#{settings.port.to_s}/#{modified['image']}"
+  modified['image'] = "http://localhost/#{modified['image']}"
   modified
 end
 
