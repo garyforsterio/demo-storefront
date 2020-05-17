@@ -21,6 +21,7 @@ module.exports = {
     },
   ],
   rules: {
+    '@typescript-eslint/camelcase': 'off',
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',

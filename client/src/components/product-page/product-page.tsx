@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import React, { useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 

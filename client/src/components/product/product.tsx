@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import React from 'react';
 import { Comment } from '@styled-icons/boxicons-regular/Comment';
 import { Heart } from '@styled-icons/boxicons-regular/Heart';
