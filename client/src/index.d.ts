@@ -15,3 +15,8 @@ export interface MenuItem {
   label: string;
   path: string;
 }
+
+export interface Category {
+  id: string;
+  name: string;
+}
