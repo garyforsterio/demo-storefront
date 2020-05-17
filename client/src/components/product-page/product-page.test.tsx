@@ -28,14 +28,14 @@ describe('List', () => {
   afterEach(() => {
     stateSpy.mockReset();
   });
-  it('it renders a loading screen', async () => {
+  it('it renders a loading icon', async () => {
     stateSpy.mockReturnValue({
       loading: true,
       response: undefined,
       error: undefined,
     });
     render(<ProductPage />);
-    expect(screen.getByText('Loading...')).toBeVisible();
+    expect(screen.getByTitle('loading')).toBeTruthy();
   });
   it('displays item', async () => {
     stateSpy.mockReturnValue({

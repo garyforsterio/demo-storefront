@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const ProductWrapper = styled.div`
+  padding: 0.5rem;
+  background: ${(props): string => props.theme.colors.backgroundSecondary};
+`;
+
 export const Container = styled.div`
   box-shadow: 0px 0px 0.5px;
   background: ${(props): string => props.theme.colors.backgroundPrimary};
